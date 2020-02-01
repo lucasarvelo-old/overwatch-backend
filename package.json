@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "babel ./bin/www --out-file ./bin/www-compiled",
     "start": "node ./bin/www",
-    "dev": "set DEBUG=overwatch-api-v1:* & nodemon ./bin/www"
+    "dev": "set DEBUG=overwatch-api-v1:* & nodemon babel-node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -17,6 +18,8 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
     "nodemon": "^2.0.2"
   }
 }
