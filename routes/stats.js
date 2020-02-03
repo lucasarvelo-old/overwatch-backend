@@ -3,24 +3,34 @@ const router = express.Router();
 const ow = require('oversmash').default();
 
 /**
- * GET player info.
+ * GET player stats.
  * batleTag param format example PlayerName-1234
  * Refert to oversmash documentation for more info
  * https://github.com/filp/oversmash
  *
  * Response example:
  *{
- *    "name": "Killer#1832",
- *    "nameEscaped": "Killer-1832",
- *    "nameEscapedUrl": "Killer%231832",
- *  "accounts": [
- *  {
- *      "level": 260,
- *      "portrait": "https://d1u1mce87gyfbn.cloudfront.net/game/unlocks/0x02500000000017AC.png",
- *      "platform": "pc",
- *      "public": true
+ *  "name": "Killer#1832",
+ *  "nameEscaped": "Killer-1832",
+ *  "platform": "pc",
+ *  "stats": {
+ *    "competitive_rank": {
+ *      "tank": 2300,
+ *      "damage": 2445,
+ *      "support": 2945
+ *    },
+ *    "endorsement_level": 5,
+ *    "games_won": 2351,
+ *    "achievements":{
+ *     ***list of achievements***
+ *    },
+ *    quickplay: {
+ *      ***quickplay stats total and by hero***
+ *    },
+ *    competitive:{
+ *    ***competitive stats total, best and by hero***
  *    }
- *  ]
+ *  }
  *}
  **/
 
@@ -28,8 +38,7 @@ router.get('/:battleTag/:platform?/:region?', (req, res, next) => {
   const battleTag = req.params.battleTag.replace('-', '#');
   const platform = req.params.platform;
   const region = req.params.region;
-
-  ow.player(battleTag)
+  ow.playerStats(battleTag)
     .then(player => {
       res.json(player);
     })
