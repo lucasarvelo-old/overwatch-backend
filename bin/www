@@ -4,9 +4,16 @@
  * Module dependencies.
  */
 
+/**
+ * - About dotenv setup -
+ * Path to .env file at project root.
+ * Remember update this path if this file or .env file is locate somewhere else;
+ */
+require('dotenv').config({ path: __dirname + '/./../.env' });
 const app = require('../app');
 const debug = require('debug')('overwatch-api-v1:server');
 const http = require('http');
+
 /**
  * Get port from environment and store in Express.
  */
