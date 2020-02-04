@@ -10,9 +10,11 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "express": "~4.16.1",
     "helmet": "^3.21.2",
     "http-errors": "~1.6.3",
+    "mongoose": "^5.8.11",
     "morgan": "~1.9.1",
     "node-sass-middleware": "0.11.0",
     "oversmash": "^1.6.0",

@@ -13,6 +13,9 @@ const statsRouter = require('./routes/stats');
 
 const app = express();
 
+//Setup MongoDb Connection;
+require('./db')();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -38,6 +41,7 @@ app.use(
     sourceMap: true,
   })
 );
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
