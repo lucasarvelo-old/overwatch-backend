@@ -14,7 +14,7 @@ const statsRouter = require('./routes/stats');
 const app = express();
 
 //Setup MongoDb Connection;
-require('./db')();
+//require('./db')();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
