@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lucarclb/overwatch-backend/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R  . $DEPLOYPATH
