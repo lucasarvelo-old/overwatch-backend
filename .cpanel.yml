@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/lucarclb/overwatch-api/
+    - export DEPLOYPATH=/home/lucarclb/overwatch-api-2/
     - /bin/cp -R  . $DEPLOYPATH
