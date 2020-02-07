@@ -23,11 +23,17 @@ app.set('view engine', 'pug');
 app.use(
   helmet({
     hidePoweredBy: { setTo: 'PHP 4.2.0' },
-    frameguard: { action: 'sameorigin' },
-    noCache: {},
-    referrerPolicy: { policy: 'same-origin' },
   })
 );
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
