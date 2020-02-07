@@ -23,9 +23,6 @@ app.set('view engine', 'pug');
 app.use(
   helmet({
     hidePoweredBy: { setTo: 'PHP 4.2.0' },
-    frameguard: { action: 'sameorigin' },
-    noCache: {},
-    referrerPolicy: { policy: 'same-origin' },
   })
 );
 
