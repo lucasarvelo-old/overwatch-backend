@@ -18,7 +18,7 @@
     "morgan": "~1.9.1",
     "node-sass-middleware": "0.11.0",
     "oversmash": "^1.6.0",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
